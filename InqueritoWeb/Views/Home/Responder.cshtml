@@ -1,0 +1,39 @@
+﻿@model InqueritoWeb.Models.Resposta
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inquerito Web :: Resposta</title>
+</head>
+<body>
+    <h1>Inquerito Web</h1>
+    <h2>Tem coragem de fazer uma viagem a Marte?</h2>
+    <h4>Preencha os campos e marque a sa resposta.</h4>
+
+    <form method="POST">
+        <div>
+            <label for="txtNome">Nome: </label><br>
+            <input type="text" id="txtNome" name="Nome"><br>
+        </div>
+        <div>
+            <label for="txtEmail">Email: </label><br>
+            <input type="email" id="txtEmail" name="Email"><br>
+        </div>
+        <div>
+            Resposta:
+            <div>
+                <input type="radio" id="rdSim" name="Sim" value="true">
+                <label for="rdSim">Sim</label>
+            </div>
+            <div>
+                <input type="radio" id="rdNao" name="Sim" value="false">
+                <label for="rdNao">Não</label>
+            </div>
+        </div>
+        <input type="submit" value="Enviar Resposta">
+    </form>
+
+</body>
+</html>
