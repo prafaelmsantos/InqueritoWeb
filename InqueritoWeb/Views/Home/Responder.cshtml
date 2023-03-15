@@ -5,35 +5,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    
     <title>Inquerito Web :: Resposta</title>
 </head>
 <body>
-    <h1>Inquerito Web</h1>
-    <h2>Tem coragem de fazer uma viagem a Marte?</h2>
-    <h4>Preencha os campos e marque a sa resposta.</h4>
+    <div class="container mt-4">
+        <h1>Inquerito Web</h1>
+        <h2>Tem coragem de fazer uma viagem a Marte?</h2>
+        <h4>Preencha os campos e marque a sa resposta.</h4>
 
-    <form method="POST">
-        <div>
-            <label for="txtNome">Nome: </label><br>
-            <input type="text" id="txtNome" name="Nome"><br>
-        </div>
-        <div>
-            <label for="txtEmail">Email: </label><br>
-            <input type="email" id="txtEmail" name="Email"><br>
-        </div>
-        <div>
-            Resposta:
-            <div>
-                <input type="radio" id="rdSim" name="Sim" value="true">
-                <label for="rdSim">Sim</label>
+        <div asp-validation-summary="All"></div>
+        <form method="POST">
+            <div class="form-group">
+                <label asp-for="Nome">Nome: </label>
+                <input asp-for="Nome" class="form-control">
+            
             </div>
-            <div>
-                <input type="radio" id="rdNao" name="Sim" value="false">
-                <label for="rdNao">Não</label>
+            <div class="form-group mt-2">
+                <label asp-for="Email">Email: </label><br>
+                <input asp-for="Email" class="form-control">
             </div>
+            <div class="form-group mt-2">
+                Resposta:
+                <div class="mt-2">
+                    <input type="radio" id="rdSim" asp-for="Sim" value="true" class="form-check-input">
+                    <label for="rdSim" class="form-check-label">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" id="rdNao" asp-for="Sim" value="false" class="form-check-input">
+                    <label for="rdNao" class="form-check-label">Não</label>
+                </div>
+            </div>
+            <div class="mt-2">
+                <input type="submit" class="btn btn-primary" value="Enviar Resposta">
+            </div>
+        </form>
+
+        <div class="mt-5">
+            <a asp-action="Index" class="btn btn-primary">Voltar ao Início</a>
         </div>
-        <input type="submit" value="Enviar Resposta">
-    </form>
+    </div>
+
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
 
 </body>
 </html>
